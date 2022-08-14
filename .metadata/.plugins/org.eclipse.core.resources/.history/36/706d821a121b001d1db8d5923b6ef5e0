@@ -1,0 +1,23 @@
+package testgen;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class startup {
+	//generic method
+	WebDriver driver;
+	public void invoke_driver()
+	{
+		WebDriverManager.chromedriver().setup();
+		 driver = new ChromeDriver();
+	}
+	public void id(String id)
+	{
+		WebElement ele = driver.findElement(By.id(id));
+	}
+
+}

@@ -1,0 +1,7 @@
+bname: chrome
+name:admin
+pass:manager
+designation:Automation
+dob:1996
+city:Mumbai
+url:http://localhost:86/login.do

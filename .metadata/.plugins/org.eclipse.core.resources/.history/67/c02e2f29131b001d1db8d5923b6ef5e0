@@ -1,0 +1,14 @@
+package testgen;
+
+public class Test {
+
+	public static void main(String[] args) {
+		startup obj = new startup();
+		//invoke the browser
+		obj.invoke_driver("https://www.google.com/");
+		//id xpath text
+		obj.id(null);
+
+	}
+
+}

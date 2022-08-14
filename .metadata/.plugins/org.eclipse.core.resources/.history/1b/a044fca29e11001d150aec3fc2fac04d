@@ -1,0 +1,18 @@
+package Mock;
+
+import static Utility.StartUp1.init_prop;
+import static Utility.StartUp1.startup;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class practice {
+
+	public static void main(String[] args) throws Exception {
+		WebDriver driver = startup(init_prop().getProperty("bname"),init_prop().getProperty("url"));
+	driver.findElement(By.xpath("//input[@id='username']")).findElement(By.xpath("//*[@name='pwd']")).findElement(By.id("loginButton"));
+
+
+	}
+
+}

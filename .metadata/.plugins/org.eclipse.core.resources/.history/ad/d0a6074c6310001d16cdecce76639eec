@@ -1,0 +1,25 @@
+package Rest_Assured;
+	import static io.restassured.RestAssured.given;
+	import static org.hamcrest.Matchers.equalTo;
+	import org.testng.annotations.Test;
+	import io.restassured.RestAssured;
+	import io.restassured.http.ContentType;
+	public class BaseUri_Book {
+	@Test
+		public void test1()
+		{
+		RestAssured.baseURI = "http://216.10.245.166";
+		
+		given().header("Content-Type","application/json").
+				body("{\\r\\n\\\"name\\\":\\\"Learn Appium Automation with Java\\\",\\r\\n\\\"isbn\\\":\\\"bcd1452\\\",\\r\\n\\\"aisle\\\":\\\"21452\\\",\\r\\n\\\"author\\\":\\\"Manoj Bhole\\\"\\r\\n}").
+		when().
+				post("/maps/api/place/add/json").
+				then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
+				body("status",equalTo("OK"));
+			
+		}
+
+
+	}
+
+}

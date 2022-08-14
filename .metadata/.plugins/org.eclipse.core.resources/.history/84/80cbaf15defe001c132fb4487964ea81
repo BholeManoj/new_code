@@ -1,0 +1,11 @@
+package Excel_Test;
+
+public class genericMethodCall {
+
+	public static void main(String[] args) {
+		getCellTypeSwitch obj = new getCellTypeSwitch();
+		obj.allDataPrint("./Excel/test.xlsx", null);
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package Excel_Test;
+
+public class genericMethodCall {
+
+	public static void main(String[] args) throws Exception {
+		getCellTypeSwitch obj = new getCellTypeSwitch();
+		//obj.allDataPrint("./Excel/test.xlsx", "data");
+		
+	}
+}

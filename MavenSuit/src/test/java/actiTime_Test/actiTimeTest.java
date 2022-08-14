@@ -1,0 +1,39 @@
+package actiTime_Test;
+import java.util.Properties;
+
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeSuite;
+
+import Utility.StartUp1;
+import Utility.actUtility;
+import actiTime_main.actiTimeMain;
+public class actiTimeTest {
+	public Properties prop;
+	public WebDriver driver ;
+	public actUtility obj = new actUtility();
+	StartUp1 ooo = new StartUp1();
+
+	@BeforeSuite
+	public void initBrowser() throws Exception
+	{
+		
+		prop = obj.init_prop();
+		driver =obj.startup(prop.getProperty("bName"), prop.getProperty("url"));
+	}
+	@Test
+	public void  verifiLoginTc()
+	{
+		actiTimeMain ob = new actiTimeMain(driver);
+		ob.verifyuserName();
+	}
+	@Test
+	public void loginTC() throws Exception
+	{
+		actiTimeMain ob = new actiTimeMain(driver);
+		driver.manage().window().maximize();
+		
+		ob.username(obj.get_config_reader("uName") , obj.get_config_reader("Pwd"));
+	}
+	
+}

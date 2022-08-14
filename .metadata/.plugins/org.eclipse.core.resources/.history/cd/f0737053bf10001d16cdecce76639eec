@@ -1,0 +1,72 @@
+package Mock;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import actiTime_LoginPageTest.StartUp1;
+
+
+public class demoqa {
+	public void doubl( WebDriver driver)
+	{
+
+	}
+	public static void main(String []args) throws Exception {
+		String bname ="chrome";
+		StartUp1 obj = new StartUp1();
+		String url ="https://demo.automationtesting.in/Dynamic.html";
+		WebDriver driver = obj.startup("ch",url);
+
+		//			WebElement rightClickBtn= driver.findElement(By.id("rightClickBtn"));
+
+		//			WebElement doubleclick= driver.findElement(By.id("doubleClickBtn"));
+		test t = new test();
+		//			t.Actionsdouble(doubleclick, driver).perform();;
+		//			t.rightClickBtn(rightClickBtn, driver).perform();
+		//			t.click(M5NTS, driver).perform();
+		WebElement from = driver.findElement(By.xpath("//img[@id='angular']"));
+		WebElement to= driver.findElement(By.xpath("//img[@id='mongo']"));
+	
+
+	
+			for(int i = 0;i<=20;i++)
+			{
+				System.out.println("hii");
+				t.drag(from, to, driver).build().perform();
+				System.out.println("2");
+				try
+				{
+					//WebElement too = driver.findElement(By.xpath("(//img[@id='angular'])[2]"));
+					if(driver.findElement(By.xpath("(//img[@id='angular'])[2]")).isDisplayed())
+					{
+						System.out.println("4");
+						WebElement too = driver.findElement(By.xpath("(//img[@id='angular'])[2]"));
+						t.drag(from, too, driver).build().perform();
+					}
+				
+				}catch(Exception e)
+				{
+					System.out.println("5");
+				}
+			
+			}
+			WebElement from1 = driver.findElement(By.xpath("//img[@id='angular']"));
+			WebElement too = driver.findElement(By.xpath("(//img[@id='angular'])[2]"));
+			System.out.println("4");
+			t.drag(from, too, driver).build().perform();
+	
+		
+
+		//			WebElement four1 = driver.findElement(By.xpath("(//img[@id='angular'])[2]"));
+		//			 Dimension a = four1.getSize();
+		//			System.out.println(a);
+		//			driver.findElement(By.xpath("//img[@id='angular']")).click();   
+		//		    System.out.println(driver.findElement(By.xpath("//img[@id='angular']")).getSize());
+		//		    Actions action = new Actions(driver);
+		//		    action.moveToElement(driver.findElement(By.xpath("//img[@id='angular']")), 320, 476).click().build().perform();
+
+	}
+}

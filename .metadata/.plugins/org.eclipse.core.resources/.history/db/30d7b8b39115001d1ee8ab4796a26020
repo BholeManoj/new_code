@@ -1,0 +1,52 @@
+package testNG;
+
+import static Utility.StartUp1.init_prop;
+import static Utility.StartUp1.startup;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import actiTime_LoginPageTest.actiTime_Login_Test;
+
+public class BasicClass2 {
+	@BeforeMethod
+	  public void bTest()
+	{
+		WebDriver driver = startup(init_prop().getProperty("bname"),init_prop().getProperty("url"));
+	
+	  }
+	@AfterTest
+	  public void aTest()
+	{
+		  System.out.println("one two threee After");
+	  }
+  @Test(priority = 1)
+  public void Verify(WebDriver driver)
+	{
+		WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+		WebElement passName =driver.findElement(By.xpath("//*[@name='pwd']"));
+		WebElement click = driver.findElement(By.id("loginButton"));
+		System.out.println("userName = " + userName.isDisplayed());
+		System.out.println("passName = " + passName.isDisplayed());
+		System.out.println("click button  = " +click.isDisplayed());
+	}
+	public void Login(WebDriver driver) throws Exception
+	{
+		/*launch url
+		enter user name
+		enter password
+		click on Login Button*/
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(init_prop().getProperty("name"));
+		driver.findElement(By.xpath("//*[@name='pwd']")).sendKeys(init_prop().getProperty("pass"));
+		driver.findElement(By.id("loginButton")).click();
+	}
+  @Test(priority = 2)
+  public void three()
+  {
+	  System.out.println("three");
+  }
+}

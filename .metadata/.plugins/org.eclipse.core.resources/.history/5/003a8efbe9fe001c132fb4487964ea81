@@ -1,0 +1,27 @@
+package Excel_Test;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class ramdomCellCall {
+
+	public static void main(String[] args) throws Exception {
+		FileInputStream fis = new FileInputStream("./Excel/test.xlsx");
+		//Create workbook object by using workbookfacory
+		Workbook wb = WorkbookFactory.create(fis);
+		Sheet s1 = wb.getSheet("data");
+		
+		int min = 20;
+	    int max = 10;
+	    int range = (min - max) - 1;
+	    System.out.println("Random Numbers between 10 and 20:");
+	    for (int i = 0; i < 10; i ++) {
+	      int random = (int)(Math.random() * range) + max;
+	    }
+
+	}
+
+}

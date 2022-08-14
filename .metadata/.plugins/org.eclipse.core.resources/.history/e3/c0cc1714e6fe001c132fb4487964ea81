@@ -1,0 +1,13 @@
+package Excel_Test;
+
+public class genericMethodCall {
+
+	public static void main(String[] args) throws Exception {
+		getCellTypeSwitch obj = new getCellTypeSwitch();
+//		get all data particular sheet
+		String path = "./Excel/test.xlsx";
+		String sheetName = "data";
+		obj.allDataPrint(path, "data");
+		
+	}
+}

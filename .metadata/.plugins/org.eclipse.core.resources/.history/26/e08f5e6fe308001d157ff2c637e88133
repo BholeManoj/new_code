@@ -1,0 +1,10 @@
+package Mock;
+
+public class test {
+
+	public Actions Actionsdouble(WebElement ele,WebDriver driver) {
+		Actions a = new Actions(driver);
+		return a.doubleClick(ele);
+	}
+	
+}

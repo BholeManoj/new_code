@@ -1,0 +1,49 @@
+package Rest_Assured;
+import static io.restassured.RestAssured.given;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import Rest_Assured_Resorces.GernircClass_RestAssured;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+public class Add_Book_Multi_Dimen_Json  {
+	@Test
+	public void addBookJson () throws Exception
+	{
+		RestAssured.baseURI = "http://216.10.245.166";
+		Response res=	
+				given().
+					header("Content-Type","application/json").
+					body(genrtate_String_From_Resorses("D:\\New folder (2)\\testdata.json")).
+				when().
+					post("/Library/Addbook.php").
+				then().
+					assertThat().statusCode(200).extract().response();
+		GernircClass_RestAssured obj = new GernircClass_RestAssured();
+		obj.raw_To_Json(res);
+		System.out.println(obj.raw_To_Json(res));
+	}
+	public static String genrtate_String_From_Resorses(String path) throws Exception
+	{
+		return new String (Files.readAllBytes(Paths.get(path)));
+	}
+	
+	
+	
+	
+	
+	
+	//Multi-Dimentional Array
+	//@DataProvider(name="bookdata")
+//	public Object [] []  getData()
+//	{
+//		return new Object [] [] 
+//	{ 	{"om","125"},{"namh","1254"},{"shivay","4587"}  };
+//	}
+}
+
+

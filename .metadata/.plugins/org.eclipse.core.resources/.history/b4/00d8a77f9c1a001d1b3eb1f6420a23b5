@@ -1,0 +1,51 @@
+package Mock;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+
+public class maxArray {
+	public void max()
+	{
+		int [] arr = {1, 45, 67, 98, 455,    678};
+		int max=Integer.MIN_VALUE; 
+		for ( int element : arr){
+		if(element>max){ max=element;
+		}}
+		System.out.println(max);	
+	}
+	public void reverse()
+	{
+		int [] Array ={7,8,9,3,4,6,11,67,98};
+		int k=Array.length-1; 
+		for(k=Array.length-1;k>=0;k--)
+		{
+		System.out.print( Array[k] + " ");
+		}
+
+	}
+	public static void dub()
+	{
+		ArrayList<Character> numbers = new ArrayList<Character>(Arrays.asList('z','a','a','w','e','t')); 
+		//	sort a to z in that manner
+		Collections.sort(numbers);
+		//remove duplicate in array
+		LinkedHashSet<Character> linkedHashSet = new LinkedHashSet<Character>(numbers);
+		System.out.println(linkedHashSet);
+	}
+	public static void main(String[] args) {
+		maxArray obj = new maxArray();
+		dub();
+		obj.max();
+		int [] arr = { 1,21,3,2};
+		int min = Integer.MAX_VALUE;
+		for ( int element : arr)
+		{if(element<min)
+			{ 
+				min=element;
+			}}
+		System.out.println(min);
+	}}
+
+

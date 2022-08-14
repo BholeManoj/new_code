@@ -1,0 +1,29 @@
+package Mock;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import Utility.StartUp1;
+
+public class demoqa {
+
+			public static void main(String []args) {
+			String bname ="chrome";
+			
+			StartUp1 obj = new StartUp1();
+			
+			String url="https://demoqa.com/droppable";
+			 WebDriver driver = obj.startup("ch",url);
+			String url ="https://demoqa.com/buttons";
+			//driver.get  //implicit wait  // maximize
+			WebDriver driver = obj.startup("ch", url);
+			Baseutility bu =new Baseutility();
+			WebDriver driver = bu.startup(bname, url);
+			WebElement doubleclick= driver.findElement(By.id("doubleClickBtn"));
+			test t = new test();
+			t.Actionsdouble(doubleclick);
+
+	}
+
+}

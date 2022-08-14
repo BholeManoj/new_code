@@ -1,0 +1,36 @@
+package Rest_Assured_Resorces;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.testng.annotations.Test;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class delete {
+	@Test(priority = 10)
+	public void test1(Response res)
+	{
+	
+			String response = res.asString();
+			JsonPath js = new JsonPath(response);
+			String placeId = js.get("ID");
+
+
+//		RestAssured.baseURI = prop.getProperty("HOST");
+//		//Case 3 place this placeId in delete request 
+		GernircClass_RestAssured obj = new GernircClass_RestAssured();
+		String response = res.asString();
+		given().
+		queryParam("key" ,"qaclick123" ).
+		body("{"+
+				"\"place_id\" : \""+obj.raw_To_Json(res)+"\""
+				+"}").
+		when().
+		post("/maps/api/place/delete/json").
+		then().
+		assertThat().statusCode(200).and().
+		body("status",equalTo("OK"));
+	}
+}

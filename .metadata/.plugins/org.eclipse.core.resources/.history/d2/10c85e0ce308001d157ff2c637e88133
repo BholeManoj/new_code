@@ -1,0 +1,16 @@
+package Mock;
+
+public class demoqa {
+
+			public static void main(String []args) {
+			String bname ="chrome";
+			String url ="https://demoqa.com/buttons";
+			Baseutility bu =new Baseutility();
+			WebDriver driver = bu.startup(bname, url);
+			WebElement doubleclick= driver.findElement(By.id("doubleClickBtn"));
+			test t = new test();
+			t.Actionsdouble(doubleclick
+
+	}
+
+}

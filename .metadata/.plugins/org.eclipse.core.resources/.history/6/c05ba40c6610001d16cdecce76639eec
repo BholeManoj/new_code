@@ -1,0 +1,33 @@
+package Rest_Assured;
+import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+public class BaseUri_Book  {
+	@Test
+	public void test1 ()
+	{
+		RestAssured.baseURI = "http://216.10.245.166";
+
+		Response res=	given().header("Content-Type","application/json").
+				body("{\"name\":\"LearnAppiumAutomationwithJava\",\"isbn\":\"bcd1452\",\"aisle\":\"21452\",\"author\":\"ManojBhole\"}").
+				when().
+				post("/Library/Addbook.php").
+				then().assertThat().statusCode(200).extract().response();
+
+		String response = res.asString();
+		System.out.println(response);
+		JsonPath js = new JsonPath(response);
+		String placeId = js.get("ID");
+		//print Status Id
+		System.out.println(placeId);
+
+	}
+
+
+}
+
+

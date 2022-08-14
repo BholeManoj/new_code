@@ -1,0 +1,38 @@
+package Mock;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+
+import Utility.StartUp1;
+
+
+public class rightClickAction {
+	static WebDriver driver;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(".............program starts........");
+		StartUp1 obj = new StartUp1();
+	
+		String url="https://demoqa.com/droppable";
+		 WebDriver driver = obj.startup("ch",url);
+		 
+		WebElement src1=driver.findElement(By.id("draggable"));
+		 onRightClick(src1);
+	}
+	
+		 public static void onRightClick(WebElement src1)
+		 {
+		 Actions act=new Actions(driver);
+		 act.contextClick(src1).perform();
+			System.out.println(".............program ends........");
+		 }
+		
+	
+
+}

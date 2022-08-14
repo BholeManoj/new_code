@@ -1,0 +1,29 @@
+package Rest_Assured;
+import static io.restassured.RestAssured.given;
+import org.testng.annotations.Test;
+import Rest_Assured_Resorces.GernircClass_RestAssured;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+public class BaseUri_Book_Multi_Dimen  {
+	@Test
+	public void test1 ()
+	{
+		RestAssured.baseURI = "http://216.10.245.166";
+		Response res=	given().header("Content-Type","application/json").
+				body(GernircClass_RestAssured.json_To_String("125541" , "4521")).
+				when().
+				post("/Library/Addbook.php").
+				then().assertThat().statusCode(200).extract().response();
+		GernircClass_RestAssured obj = new GernircClass_RestAssured();
+		obj.raw_To_Json(res);
+		System.out.println(obj.raw_To_Json(res));
+	}
+	//Multi-Dimentional Array
+	public void getData()
+	{
+		new Object [] [] 
+				{  {"om","125"},{"namh","1254"},{"shivay","4587"}	};
+	}
+}
+
+

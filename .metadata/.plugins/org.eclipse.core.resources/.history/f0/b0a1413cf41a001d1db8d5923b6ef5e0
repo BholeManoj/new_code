@@ -1,0 +1,58 @@
+package Flipkart_data;
+import java.util.HashMap;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+public class flipkart_Login_Test {
+	public flipkart_LoginMain  obj = new flipkart_LoginMain(null)  ;
+	public void cross(WebDriver driver) throws Exception
+	{
+		Utility base = new Utility();
+		flipkart_LoginMain  obj = new flipkart_LoginMain(driver)  ;
+		obj.cross().click();
+		obj.search().sendKeys("iphone13");
+		obj.search().sendKeys(Keys.ENTER);
+		while(obj.s_size().isDisplayed())
+		{
+			for(int i = 0 ; i<=obj.product_name().size()-1;i++)
+			{
+				System.out.println( obj.product_name().get(i).getText() +" ---- > "+ obj.product_price().get(i).getText());
+				System.out.println();
+			}
+			try {
+				if(obj.next().isDisplayed())
+				{
+					obj.next().click();
+				}
+
+			}catch(Exception e)
+			{
+				System.out.println("arrrrrrrrrrrrrrrrrrrrr");
+				//driver.navigate().refresh();
+				WebElement cross = driver.findElement(By.xpath("//span[text()='Next']"));
+				if(cross.isDisplayed())
+				{
+					cross.click();
+				}else {
+					for(int i = 0 ; i<=obj.product_name().size()-1;i++)
+					{
+						System.out.println( obj.product_name().get(i).getText() +" ---- > "+ obj.product_price().get(i).getText());
+						System.out.println();
+					}
+					break;
+				}	
+			}
+		}
+	}
+	public static void main(String[] args) throws Exception {
+		System.out.println("start the code............");
+		Utility base = new Utility();
+		String url = "https://www.flipkart.com/";
+		WebDriver driver = base.startup("ch", url);
+		flipkart_Login_Test test = new flipkart_Login_Test();
+		test.cross(driver);
+		driver.close();
+	}
+}

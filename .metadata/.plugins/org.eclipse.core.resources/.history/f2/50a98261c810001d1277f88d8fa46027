@@ -1,0 +1,39 @@
+package Rest_Assured_Resorces;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class GernircClass_RestAssured {
+
+	public static String body()
+	{
+		String body = ("{\r\n"
+				+ "    \"location\":{\r\n"
+				+ "        \"lat\" : -38.383494,\r\n"
+				+ "        \"lng\" : 33.427362\r\n"
+				+ "    },\r\n"
+				+ "    \"accuracy\":50,\r\n"
+				+ "    \"name\":\"Frontline house\",\r\n"
+				+ "    \"phone_number\":\"(+91) 983 893 3937\",\r\n"
+				+ "    \"address\" : \"29, side layout, cohen 09\",\r\n"
+				+ "    \"types\": [\"shoe park\",\"shop\"],\r\n"
+				+ "    \"website\" : \"http://google.com\",\r\n"
+				+ "    \"language\" : \"French-IN\"\r\n"
+				+ "}\r\n"
+				+ "  ");
+		return body;
+	}
+	public  String raw_To_Json(Response res)
+	{
+		String response = res.asString();
+		JsonPath js = new JsonPath(response);
+		String placeId = js.get("ID");
+		return placeId;
+	}
+	public  static String json_To_String(String A, String B)
+	{
+		String placeId = "{\"name\":\"LearnAppiufsfmAutomationwithJava\",\"isbn\":\" "+A+"\",\"aisle\":\"21452\",\"author\":\"ManojBhole\"}";
+		return placeId;
+	}
+
+}

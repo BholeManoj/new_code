@@ -1,0 +1,29 @@
+package Automation_Class;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import Utility.StartUp1;
+
+public class UploadFileAutoIt {
+
+	public static void main(String[] args) throws Exception {
+		StartUp1 obj=new StartUp1();
+		String url="https://demoqa.com/automation-practice-form";
+		WebDriver driver=obj.startup("ch",url);
+		//input[@id='uploadPicture']
+		WebElement upload=driver.findElement(By.xpath("//input[@id='uploadPicture']"));
+	//	WebElement upload=driver.findElement(By.cssSelector("#uploadPicture"));
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();", upload);
+		Actions act=new Actions(driver);
+		act.click(upload).perform();
+		Thread.sleep(1000);
+		Runtime.getRuntime().exec("D://March_Batch//New_Demo//UploadFile//Test123.exe");
+	}
+
+}

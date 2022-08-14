@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-08-13T16:12:28 IST" name="Default suite" finished-at="2022-08-13T16:13:28 IST" duration-ms="60510">
+    <groups>
+    </groups>
+    <test started-at="2022-08-13T16:12:28 IST" name="Default test" finished-at="2022-08-13T16:13:28 IST" duration-ms="60510">
+      <class name="testNG.BasicClass3">
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:12:28 IST" name="Login" data-provider="logindata" finished-at="2022-08-13T16:12:52 IST" duration-ms="24379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:12:28 IST" name="Login" data-provider="logindata" finished-at="2022-08-13T16:12:59 IST" duration-ms="30607" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:12:52 IST" name="Login" data-provider="logindata" finished-at="2022-08-13T16:13:07 IST" duration-ms="14652" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:12:59 IST" name="Login" data-provider="logindata" finished-at="2022-08-13T16:13:07 IST" duration-ms="7959" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:13:07 IST" name="Login" data-provider="logindata" finished-at="2022-08-13T16:13:21 IST" duration-ms="14144" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Login(java.lang.String,java.lang.String)[pri:0, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:13:07 IST" name="Login" data-provider="logindata" finished-at="2022-08-13T16:13:17 IST" duration-ms="10278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="Verify()[pri:1, instance:testNG.BasicClass3@222545dc]" started-at="2022-08-13T16:13:21 IST" name="Verify" finished-at="2022-08-13T16:13:28 IST" duration-ms="7640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify -->
+      </class> <!-- testNG.BasicClass3 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

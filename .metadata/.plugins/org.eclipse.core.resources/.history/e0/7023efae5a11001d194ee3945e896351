@@ -1,0 +1,36 @@
+package Rest_Assured_Resorces;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+
+public class delete {
+@Test
+	public static void deletecheck(String s) throws Exception
+	{
+		//Create response
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("D://March_Batch//MavenSuit//src//test//java//Rest_Assured_Resorces//env.properties");
+		prop.load(fis);
+		RestAssured.baseURI = prop.getProperty("HOST");
+	
+
+		//Case 3 place this placeId in delete request 
+		given().
+		queryParam("key" ,"qaclick123" ).
+		body("{"+
+				"\"place_id\" : \""+s+"\""
+				+"}").
+		when().
+		post("/maps/api/place/delete/json").
+		then().
+		assertThat().statusCode(200).and().
+		body("status",equalTo("OK"));
+	}
+}

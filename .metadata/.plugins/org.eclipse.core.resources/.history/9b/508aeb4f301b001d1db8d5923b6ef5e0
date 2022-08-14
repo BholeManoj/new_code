@@ -1,0 +1,15 @@
+package testgen;
+
+public class Test {
+
+	public static void main(String[] args) {
+		startup obj = new startup();
+		//invoke the browser
+		obj.invoke_driver("https://demoqa.com/text-box");
+		//id xpath text
+		String name = obj.id("userName-label");
+		System.out.println(name);
+
+	}
+
+}

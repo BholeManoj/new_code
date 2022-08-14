@@ -1,0 +1,35 @@
+package demo_one;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
+import actiTime_LoginPageTest.StartUp1;
+public class fluentwait {
+	void fwait(WebDriver driver)
+	{
+		WebElement startstop = driver.findElement(By.id("startStopButton"));
+		startstop.click();
+		//Flent wait
+		Wait <WebDriver> wt = new FluentWait<WebDriver> (driver)
+				.withTimeout(Duration.ofSeconds(20))
+				.pollingEvery(Duration.ofMillis(1))
+				.ignoring(NoSuchElementException.class);
+		WebElement ele = wt.until(ExpectedConditions.visibilityOfElementLocated(By.id("resetButton")));
+		ele.click();
+	}
+	public static void main(String[] args) {
+		//object create
+		StartUp1 bu = new StartUp1();
+		//url store in string
+		String url = "https://demoqa.com/progress-bar";
+		WebDriver driver = bu.startup("ch", url);
+		fluentwait ft = new fluentwait();
+		ft.fwait(driver);
+	}
+}

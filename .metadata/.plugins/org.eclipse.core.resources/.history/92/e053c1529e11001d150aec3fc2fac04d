@@ -1,0 +1,15 @@
+package Mock;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class practice {
+
+	public static void main(String[] args) {
+		WebDriver driver = null;
+		driver.findElement(By.id("")).findElement(By.id(null)).findElement(By.id(null));
+
+
+	}
+
+}

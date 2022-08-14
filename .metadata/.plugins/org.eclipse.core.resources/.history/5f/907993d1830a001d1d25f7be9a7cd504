@@ -1,0 +1,14 @@
+package TESTDEMO.DEMO123;
+
+import org.openqa.selenium.WebDriver;
+
+import Utility.StartUp;
+
+public class AppTest 
+{
+public static void main(String[] args) {
+
+	StartUp obj = new StartUp();
+	WebDriver driver = obj.startup("ch", url) ;
+}
+}

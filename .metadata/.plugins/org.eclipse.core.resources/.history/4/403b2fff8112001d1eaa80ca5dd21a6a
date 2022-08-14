@@ -1,0 +1,20 @@
+package actiTime_Main;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+public class ActiTime_Task {
+	//div[text()='TASKS']
+	WebDriver driver;
+	public ActiTime_Task(WebDriver driver)
+	{
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	//method 1 for executation 
+	By click = By.id("");
+	public void taskclick()
+	{
+		driver.findElement(click).click();
+	}
+	
+}

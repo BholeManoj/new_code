@@ -1,0 +1,54 @@
+package Rest_Assured_Resorces;
+
+import static Rest_Assured_Resorces.GernircClass_RestAssured.body;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class delete {
+
+	public static void deletecheck() throws Exception
+	{
+		String str = body();
+		//Create response
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream("D://March_Batch//MavenSuit//src//test//java//Rest_Assured_Resorces//env.properties");
+		prop.load(fis);
+		RestAssured.baseURI = prop.getProperty("HOST");
+		//Case 1 = Fetch the response
+		Response res = given().
+				queryParam("key" ,"qaclick123" ).
+				body(str).
+				when().
+				post("/maps/api/place/add/json").
+				then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
+				body("status",equalTo("OK")).extract().response();
+		//Case 2 = Grab the place id from response
+		String response = res.asString();
+		System.out.println(response);
+		//convert String to Json 
+		JsonPath js = new JsonPath(response);
+		String placeId = js.get("place_id");
+		//print Status Id
+		System.out.println(placeId);
+
+		//Case 3 place this placeId in delete request 
+		given().
+		queryParam("key" ,"qaclick123" ).
+		body("{"+
+				"\"place_id\" : \""+placeId+"\""
+				+"}").
+		when().
+		post("/maps/api/place/delete/json").
+		then().
+		assertThat().statusCode(200).and().
+		body("status",equalTo("OK"));
+	}
+}

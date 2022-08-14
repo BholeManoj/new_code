@@ -1,0 +1,18 @@
+package Mock;
+
+public class maxArray {
+
+	public static void main(String[] args) {
+	int [] am = { 1,2,3,2};
+	int max = Integer.MAX_VALUE;
+	for(int a : am)
+	{
+		if(a>max)
+		{
+			max=a;
+		}
+	}
+System.out.println(max);
+	}
+
+}

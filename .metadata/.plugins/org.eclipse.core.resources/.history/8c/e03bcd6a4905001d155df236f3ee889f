@@ -1,0 +1,14 @@
+package Automation_Class;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class iframe_main {
+	static WebDriver driver;
+	public  static WebDriver iframe()
+	{
+		driver.findElement(By.id("sampleHeading"));
+		return driver;
+	}
+
+}

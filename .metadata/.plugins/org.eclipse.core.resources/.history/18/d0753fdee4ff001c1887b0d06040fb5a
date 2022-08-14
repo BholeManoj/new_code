@@ -1,0 +1,33 @@
+package actiTime_Test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import Utility.StartUp;
+import actiTime_main.actiTime_Login_Page;
+
+public class actiTime_Test {
+	
+	public void test1(WebDriver driver)
+	{
+		actiTime_Login_Page ob = new actiTime_Login_Page(driver);
+		System.out.println("username and passowrd correct");
+		String uName ="standard_user";
+		String pName ="secret_sauce";
+		ob.loginpage(uName, pName);
+	}
+
+	public static void main(String[] args) {
+		System.out.println("code start");
+		actiTime_Test obj = new actiTime_Test();
+		StartUp obj1 = new StartUp();
+		String url = "https://www.saucedemo.com/";
+		WebDriver driver = obj1.startup("ch", url);
+		obj.test1(driver);
+		System.out.println("code stop");
+		
+
+	}
+
+}

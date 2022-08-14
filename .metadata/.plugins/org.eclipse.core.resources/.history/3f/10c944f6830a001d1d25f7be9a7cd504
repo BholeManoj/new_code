@@ -1,0 +1,14 @@
+package TESTDEMO.DEMO123;
+
+import org.openqa.selenium.WebDriver;
+
+import Utility.StartUp;
+
+public class AppTest 
+{
+public static void main(String[] args) {
+String url = "https://learning.tcsionhub.in/iDH/India/Products_detail/4943730";
+StartUp_webdriver obj = new StartUp_webdriver();
+	WebDriver driver = obj.startup("ch", url) ;
+}
+}

@@ -1,0 +1,26 @@
+package Automation_Class;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import Utility.StartUp1;
+
+public class iframe_Test {
+	public void Iframe(WebDriver driver)
+	{
+		iframe_main obj = new iframe_main();
+		WebElement  id1 = obj.iframe();
+	driver.switchTo().frame(null);
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		StartUp1 obj = new StartUp1();
+		String url  = 	"https://demoqa.com/frames";
+		WebDriver driver  = obj.startup("ch", url);
+	}
+
+	
+}

@@ -1,0 +1,32 @@
+package testNG;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+@Listeners(testNG.itestListners.class)
+public class BasicClass {
+	@BeforeMethod
+	  public void bTest()
+	{
+		  System.out.println("one two threee Before");
+	  }
+	@AfterTest
+	  public void aTest()
+	{
+		  System.out.println("one two threee After");
+	  }
+  @Test(priority = 1)
+  public void one() {
+	  System.out.println("one");
+  }
+  @Test(priority = 3)
+  public void two()
+  {
+	  System.out.println("two");
+  }
+  @Test(priority = 2)
+  public void three()
+  {
+	  System.out.println("three");
+  }
+}

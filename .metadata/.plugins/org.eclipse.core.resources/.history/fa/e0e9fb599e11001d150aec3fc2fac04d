@@ -1,0 +1,20 @@
+package Mock;
+
+import static Utility.StartUp1.init_prop;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class practice {
+
+	public static void main(String[] args) {
+		WebDriver driver = null;
+						driver.findElement(By.id("")).findElement(By.id(null)).findElement(By.id(null));
+
+
+	}
+
+}
+driver.findElement(By.xpath("//input[@id='username']")).sendKeys(init_prop().getProperty("name"));
+driver.findElement(By.xpath("//*[@name='pwd']")).sendKeys(init_prop().getProperty("pass"));
+driver.findElement(By.id("loginButton")).click();

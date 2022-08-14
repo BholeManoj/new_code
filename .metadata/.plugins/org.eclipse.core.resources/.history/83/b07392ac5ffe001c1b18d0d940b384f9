@@ -1,0 +1,18 @@
+package Excel_Test;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class day_1 {
+
+	public static void main(String[] args) throws Exception {
+		FileInputStream fis = new FileInputStream("./Excel/test.xlsx");
+		//Create workbook object by using workbookfacory
+		Workbook wb = WorkbookFactory.create(fis);
+		int totalsheet = wb.getNumberOfSheets();
+		System.out.println(totalsheet);
+	}
+
+}

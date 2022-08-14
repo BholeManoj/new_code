@@ -1,0 +1,10 @@
+package TESTDEMO.DEMO123;
+
+import org.openqa.selenium.WebDriver;
+
+public class AppTest 
+{
+public static void main(String[] args) {
+	WebDriver driver = null;
+}
+}

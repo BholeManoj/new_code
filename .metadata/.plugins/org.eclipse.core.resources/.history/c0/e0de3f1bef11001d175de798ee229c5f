@@ -1,0 +1,13 @@
+package practise;
+
+import java.util.HashMap;
+
+public class DublicateCahractor {
+
+	public static void main(String[] args) {
+			String str = "aabbcdeff";
+			char [] ch = str.toCharArray();
+			HashMap <Character , Integer> hm = new HashMap<Character , Integer>();
+	}
+
+}
